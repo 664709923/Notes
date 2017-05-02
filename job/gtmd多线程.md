@@ -25,8 +25,17 @@
 
 
 
+LinkedBlockingQueue
+add方法：非阻塞，但是无法添加时会抛出IllegalStateException异常
+offer方法：非阻塞，建议使用；带参数的offer方法可以等待指定时间
+put方法：队列满时阻塞
+
+poll：与offer对应，非阻塞；带参数的poll方法可以等待指定时间
+take：队列为空时阻塞
+
+
 
 记录一下某坑：
-thread.setUncaughtExceptionHandler方法无法catch到某个定时任务中的exception；
+Thread.setUncaughtExceptionHandler方法无法catch到某个定时任务中的exception；
 
 newSingleThreadScheduledExecutor调用scheduleAtFixedRate方法，任务中出现nullpointException时，任务被取消掉，但是线程一直存在，处于waitting状态，且thread.setUncaughtExceptionHandler无法catch到该exception。
