@@ -1,5 +1,5 @@
 ### 查看模块参数信息
 
-yum install sysfsutils
+`yum install sysfsutils`
 
-systool -vm ${module_name}
+`systool -vm ${module_name}`
